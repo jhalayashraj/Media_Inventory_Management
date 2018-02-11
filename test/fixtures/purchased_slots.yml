@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  resale_timeslot: one
+  card_last_four: MyString
+  card_type: MyString
+
+two:
+  user: two
+  resale_timeslot: two
+  card_last_four: MyString
+  card_type: MyString

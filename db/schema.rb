@@ -10,7 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211124124) do
+ActiveRecord::Schema.define(version: 20180211181023) do
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "message"
+    t.integer "purchased_slot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchased_slot_id"], name: "index_notifications_on_purchased_slot_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "purchased_slots", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "resale_timeslot_id"
+    t.string "card_last_four"
+    t.string "card_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resale_timeslot_id"], name: "index_purchased_slots_on_resale_timeslot_id"
+    t.index ["user_id"], name: "index_purchased_slots_on_user_id"
+  end
+
+  create_table "resale_timeslots", force: :cascade do |t|
+    t.integer "timeslot_id"
+    t.integer "user_id"
+    t.float "slot_duration"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["timeslot_id"], name: "index_resale_timeslots_on_timeslot_id"
+    t.index ["user_id"], name: "index_resale_timeslots_on_user_id"
+  end
 
   create_table "timeslots", force: :cascade do |t|
     t.integer "user_id"
