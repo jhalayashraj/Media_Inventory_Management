@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211121028) do
+ActiveRecord::Schema.define(version: 20180211124124) do
+
+  create_table "timeslots", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "duration"
+    t.float "price"
+    t.float "frequency"
+    t.boolean "status", default: true
+    t.integer "on_resale", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180211121028) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "phone_number"
+    t.integer "role", default: 2
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
