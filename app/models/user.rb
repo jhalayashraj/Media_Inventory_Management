@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: {admin: 0, admin_client: 1, client: 2}
+
+  has_many :timeslots
+  has_many :purchased_slots
 end
