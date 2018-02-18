@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :username, :email, :password])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :username, :email, :password])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :phone_number, :email, :password])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :phone_number, :email, :password])
   end
 
   def only_see_own_page
