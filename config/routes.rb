@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   resources :notifications
   resources :timeslots
   devise_for :users
