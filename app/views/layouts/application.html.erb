@@ -8,13 +8,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Media Inventory Management</title>
-  <!-- Bootstrap core CSS-->
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <!-- Custom fonts for this template-->
-  <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-  <!-- Custom styles for this template-->
-  <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
+  <!-- Global CSS -->
+  <%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -142,20 +138,13 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
             <%= link_to "Logout", destroy_user_session_path,:method => 'delete', class: 'btn btn-primary' %>
           </div>
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <%= javascript_include_tag 'index', 'data-turbolinks-track': 'reload' %>
-    <!-- <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <!-- Core plugin JavaScript-->
-    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
-    <!-- Custom scripts for all pages-->
-    <!-- <script src="js/sb-admin.min.js"></script> -->
+    <!-- Global JS -->
+    <%= javascript_include_tag 'dashboard', 'data-turbolinks-track': 'reload' %>
   </div>
 </body>
 
